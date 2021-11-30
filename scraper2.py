@@ -17,14 +17,14 @@ try:
 finally:
     print(" Sukses? ")
 
-print(len(driver.find_elements(By.XPATH, "//div[@class = 'css-bk6tzz e1nlzfl3']")),'<=========')
+# print(len(driver.find_elements(By.XPATH, "//div[@class = 'css-bk6tzz e1nlzfl3']")),'<=========')
 
 data = driver.page_source
 driver.quit()
 soup = BeautifulSoup(data, "html.parser")
-# print(soup, "soup =>>>>>>")
+
 itemLists = soup.findAll("div", class_ = "css-bk6tzz")
-# print(itemLists)
+
 output = []
 
 for i, item in enumerate(itemLists):
@@ -36,16 +36,7 @@ for i, item in enumerate(itemLists):
     rating_produk = item.findAll("img", class_ = "css-177n1u3")
     for i, rating in enumerate(rating_produk):
         rating_counter += 1
-    # obj = {
-    #     "Nama_Produk": nama_produk,
-    #     "Gambar_Produk": gambar_produk,
-    #     "Harga_Produk": harga_produk,
-    #     "Nama_Toko": nama_toko,
-    #     "Rating_Produk": rating_counter
-    # }
-    # output.append(obj)
     output.append([nama_produk,gambar_produk,harga_produk,nama_toko,rating_counter])
-print(output, "output nich")
 
 with open('bricksTest.csv', 'w', newline='') as file:
     csv_writer = csv.writer(file)
