@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import csv
 import time
-driver = Chrome(executable_path='C:/Users/Vincent Ong/lamar_kerja_tes_projek/bricks/web-scraping-python/chromedriver_win32/chromedriver.exe')
+driver = Chrome(executable_path='C:/Users/donov/Hacktiv_Assignment/web-scraping-python/chromedriver_win32/chromedriver.exe')
 driver.get('https://www.tokopedia.com/p/handphone-tablet/handphone')
 driver.execute_script("window.scrollTo(0, 1460)")
 
